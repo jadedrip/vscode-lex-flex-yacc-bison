@@ -154,11 +154,14 @@
         },
         {
           "include": "#rule"
+        },
+        {
+          "include": "source.c#comments"
         }
       ]
     },
     "rule": {
-      "begin": "(_?[\\w\\-_]*[\\w\\d\\-_]\\w*):",
+      "begin": "(_?[\\w\\-_]*[\\w\\d\\-_]\\w*)",
       "beginCaptures": {
         "1": {
           "name": "variable.language.yacc"
@@ -167,6 +170,9 @@
       "end": ";",
       "patterns": [
         {
+          "include": "#rule.symbol"
+        },
+        {
           "include": "#rule.code"
         },
         {
@@ -174,8 +180,19 @@
         },
         {
           "include": "#string.double_quote"
+        },
+        {
+          "include": "source.c#comments"
         }
       ]
+    },
+    "rule.symbol": {
+      "match": "[:\\|]",
+      "captures":{
+        "0" :{
+          "name" : "string.quoted.single.c"
+        }
+      }
     },
     "rule.code": {
       "begin": "{",

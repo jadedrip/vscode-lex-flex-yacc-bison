@@ -23,7 +23,7 @@
 		"languages"
 	],
     "categories": [
-        "Languages"
+        "Programming Languages"
     ],
 	"galleryBanner": {
 		"color": "#b4459a",
@@ -38,7 +38,8 @@
                     "lex"
                 ],
                 "extensions": [
-                    ".l"
+                    ".l",
+		            ".flex"
                 ],
                 "configuration": "./language-configuration.json"
             },
